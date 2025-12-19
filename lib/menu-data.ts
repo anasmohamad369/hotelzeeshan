@@ -80,10 +80,10 @@ export type CartItem = MenuItem & {
 }
 
 export const categories = [
-  { id: "biryaniSpecial", label: "Biryani Special", icon: "/half-portion-mutton-biryani.jpg" },
-  { id: "rotiItems", label: "Roti & Naan", icon: "/plain-naan-bread.jpg" },
-  { id: "gravyItems", label: "Gravy Items", icon: "/kadai-chicken-curry.jpg" },
-  { id: "tandooriSpecial", label: "Tandoori Special", icon: "/tandoori.png" },
-  { id: "nihariItems", label: "Nihari & More", icon: "/paya.png" },
-  { id: "desserts", label: "Desserts", icon: "/apricot.png" },
+  { id: "biryaniSpecial", label: "Biryani Special", images: "/half-portion-mutton-biryani.jpg" },
+  { id: "rotiItems", label: "Roti & Naan", images: "/plain-naan-bread.jpg" },
+  { id: "gravyItems", label: "Gravy Items", images: "/kadai-chicken-curry.jpg" },
+  { id: "tandooriSpecial", label: "Tandoori Special", images: "/tandoori.png" },
+  { id: "nihariItems", label: "Nihari & More", images: "/paya.png" },
+  { id: "desserts", label: "Desserts", images: "/apricot.png" },
 ] as const

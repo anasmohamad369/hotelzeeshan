@@ -46,12 +46,12 @@ export default function Home() {
   const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0)
 
   const menuSections = [
-    { id: "biryaniSpecial", title: "Biryani Special", icon: "🍚", items: menuData.biryaniSpecial },
-    { id: "rotiItems", title: "Roti & Naan", icon: "🫓", items: menuData.rotiItems },
-    { id: "gravyItems", title: "Gravy Items", icon: "🍛", items: menuData.gravyItems },
-    { id: "tandooriSpecial", title: "Tandoori Special", icon: "🍗", items: menuData.tandooriSpecial },
-    { id: "nihariItems", title: "Nihari & More", icon: "🥘", items: menuData.nihariItems },
-    { id: "desserts", title: "Desserts", icon: "🍮", items: menuData.desserts },
+    { id: "biryaniSpecial", title: "Biryani Special", images: "/half-portion-mutton-biryani.jpg", items: menuData.biryaniSpecial },
+    { id: "rotiItems", title: "Roti & Naan", images: "/plain-naan-bread.jpg", items: menuData.rotiItems },
+    { id: "gravyItems", title: "Gravy Items", images: "/kadai-chicken-curry.jpg", items: menuData.gravyItems },
+    { id: "tandooriSpecial", title: "Tandoori Special", images: "/tandoori.png", items: menuData.tandooriSpecial },
+    { id: "nihariItems", title: "Nihari & More", images: "/paya.png", items: menuData.nihariItems },
+    { id: "desserts", title: "Desserts", images: "/apricot.png", items: menuData.desserts },
   ]
 
   return (
@@ -78,11 +78,11 @@ export default function Home() {
             ref={(el) => {
               sectionRefs.current[section.id] = el
             }}
-            className="scroll-mt-32"
+            className="scroll-mt-32 "
           >
             <MenuSection
               title={section.title}
-              icon={section.icon}
+              images={section.images}
               items={section.items}
               cart={cart}
               onAdd={addToCart}
@@ -105,7 +105,6 @@ export default function Home() {
         </div>
       )}
 
-      {/* Cart Drawer */}
       <CartDrawer
         isOpen={cartOpen}
         onClose={() => setCartOpen(false)}

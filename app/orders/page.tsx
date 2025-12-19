@@ -83,7 +83,7 @@ export default function OrdersPage() {
         if (startDate) params.append('startDate', startDate)
         if (endDate) params.append('endDate', endDate)
 
-        const url = `http://localhost:3001/orders${params.toString() ? `?${params.toString()}` : ''}`
+        const url = `https://hotelzeeshanbackend.vercel.app/orders${params.toString() ? `?${params.toString()}` : ''}`
         const response = await fetch(url)
 
         if (!response.ok) {
@@ -158,17 +158,17 @@ export default function OrdersPage() {
         {/* Search and Filter Bar */}
         <div className="flex gap-4 mb-6 flex-wrap">
           <button
-  onClick={() => {
-    setSearchQuery("")
-    setStatusFilter("all")
-    setDateFilter("all")
-    setStartDate("")
-    setEndDate("")
-  }}
-  className="text-sm text-primary underline"
->
-  Clear Filters
-</button>
+            onClick={() => {
+              setSearchQuery("")
+              setStatusFilter("all")
+              setDateFilter("all")
+              setStartDate("")
+              setEndDate("")
+            }}
+            className="text-sm text-primary underline"
+          >
+            Clear Filters
+          </button>
           <div className="relative flex-1 min-w-[250px]">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input

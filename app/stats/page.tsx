@@ -28,7 +28,7 @@ export default function StatsPage() {
         async function fetchStats() {
             try {
                 setLoading(true)
-                const response = await fetch('http://localhost:3001/stats')
+                const response = await fetch('https://hotelzeeshanbackend.vercel.app/stats')
 
                 if (!response.ok) {
                     throw new Error('Failed to fetch statistics')
@@ -194,7 +194,7 @@ export default function StatsPage() {
                                 </CardContent>
                             </Card>
 
-                            
+
                         </div>
 
                         {/* Detailed Table */}

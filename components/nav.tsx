@@ -5,6 +5,7 @@ import Link from "next/link"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import Image from "next/image"
 
 interface NavProps {
   cartCount?: number
@@ -20,13 +21,8 @@ export default function Nav({ cartCount = 0, onCartClick }: NavProps) {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-accent rounded-full flex items-center justify-center">
-              <span className="text-xl">🏨</span>
-            </div>
-            <div>
-              <h1 className="text-xl font-bold tracking-tight">Hotel Zeeshan</h1>
-              <p className="text-xs text-primary-foreground/70">Authentic Hyderabadi Cuisine</p>
-            </div>
+           <Image src="/logo.jpeg" alt="Logo" width={50} height={50} />
+           <h1 className="text-xl font-semibold"> Hotel Zeeshan </h1>
           </Link>
 
           {/* Desktop Navigation */}

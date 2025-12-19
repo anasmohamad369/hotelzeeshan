@@ -33,7 +33,6 @@ export default function CartDrawer({ isOpen, onClose, cart, onAdd, onRemove, onC
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          token: 12,
           items: cart.map((item) => ({
             name: item.item,
             qty: item.quantity,

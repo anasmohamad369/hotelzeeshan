@@ -5,18 +5,18 @@ import type { MenuItem, CartItem } from "@/lib/menu-data"
 
 interface MenuSectionProps {
   title: string
-  icon: string
+  images: string
   items: MenuItem[]
   cart: CartItem[]
   onAdd: (item: MenuItem) => void
   onRemove: (slug: string) => void
 }
 
-export default function MenuSection({ title, icon, items, cart, onAdd, onRemove }: MenuSectionProps) {
+export default function MenuSection({ title, images, items, cart, onAdd, onRemove }: MenuSectionProps) {
   return (
     <section className="mb-10">
       <div className="flex items-center gap-3 mb-6">
-        <span className="text-3xl">{icon}</span>
+        <img  src={images} alt={title} className="w-12 h-12" />
         <h2 className="text-2xl font-bold text-foreground">{title}</h2>
         <div className="flex-1 h-px bg-border ml-4" />
       </div>

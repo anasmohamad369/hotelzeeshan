@@ -16,23 +16,15 @@ const _playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Hotel Zeeshan - Authentic Hyderabadi Cuisine",
   description: "Experience the royal taste of Hyderabadi cuisine at Hotel Zeeshan. Order biryani, tandoori, and more!",
-  generator: "v0.app",
+
   icons: {
     icon: [
       {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
+        url: "/logo.jpeg",
+        type: "image/jpeg",
       },
     ],
-    apple: "/apple-icon.png",
+    apple: "/logo.jpeg",
   },
 }
 
