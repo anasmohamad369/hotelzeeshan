@@ -474,6 +474,56 @@ export const menuData: Record<string, MenuItem[]> = {
       image: "/sitaphal.png",
     },
   ],
+
+  extras : [
+   
+     {
+      item: "Campa Cola (TIN)",
+      image: "/campacola.png",
+     
+      price: 25,
+      slug: "campacola",
+    },
+
+     {
+      item: "Soft Drink Bottle ",
+      price: 10,
+      slug: "campacola-bottle",
+      image: "/campacolabottle.png",
+    },
+     {
+      item: "Water Bottle",
+      price: 10,
+      slug: "water-bottle",
+      image: "/kinley.png",
+    },
+    {
+      item: "Soda",
+      price: 15,
+      slug: "soda",
+      image: "/soda.png",
+    },
+     {
+      item: "Extra Rice ",
+      image: "/extrarice.png",
+      variants: [
+        {
+          size: "Half",
+          price: 60,
+          slug: "extrarice-half",
+          item: "Extra Rice Half",
+        },
+        {
+          size: "Full",
+          price: 100,
+          slug: "extrarice-full",
+          item: "Extra Rice Full",
+        },
+      ],
+    },
+
+
+  ]
 };
 
 export const categories = [
@@ -487,4 +537,5 @@ export const categories = [
   { id: "tandooriSpecial", label: "Tandoori Special", icon: "/tandoori.png" },
   { id: "nihariItems", label: "Nihari & More", icon: "/paya.png" },
   { id: "desserts", label: "Desserts", icon: "/apricot.png" },
+  { id: "extras", label: "Extras", icon: "/apricot.png" },
 ] as const;

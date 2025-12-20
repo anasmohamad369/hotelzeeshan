@@ -52,6 +52,7 @@ export default function Home() {
     { id: "tandooriSpecial", title: "Tandoori Special", images: "/tandoori.png", items: menuData.tandooriSpecial },
     { id: "nihariItems", title: "Nihari & More", images: "/paya.png", items: menuData.nihariItems },
     { id: "desserts", title: "Desserts", images: "/apricot.png", items: menuData.desserts },
+    { id: "extras", title: "Extras", images: "/apricot.png", items: menuData.extras },
   ]
 
   return (
