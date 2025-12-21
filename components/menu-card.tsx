@@ -87,10 +87,10 @@ export default function MenuCard({ item, cart, onAdd, onRemove }: MenuCardProps)
         )}
 
         <div className="flex items-center justify-between mt-2">
-          <span className="text-xl font-bold text-primary">₹{displayPrice}</span>
+          <span className="text-xl font-bold text-secondary">₹{displayPrice}</span>
 
           {quantity === 0 ? (
-            <Button size="sm" onClick={handleAdd} className="bg-primary hover:bg-primary/90">
+            <Button size="sm" onClick={handleAdd} className="bg-secondary hover:bg-primary/90">
               <Plus className="h-4 w-4 mr-1" />
               Add
             </Button>

@@ -18,10 +18,10 @@ export default function CategoryTabs({ activeCategory, onCategoryChange }: Categ
               key={category.id}
               onClick={() => onCategoryChange(category.id)}
               className={cn(
-                "flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all",
+                "flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap shadow-2xl transition-all",
                 activeCategory === category.id
                   ? "bg-primary text-primary-foreground shadow-md"
-                  : "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+                  : "bg-white text-black hover:bg-white/80",
               )}
             >
               <img src={category.icon} alt={category.label} className="w-6 h-6 rounded-full" />

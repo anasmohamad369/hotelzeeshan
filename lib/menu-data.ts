@@ -88,9 +88,21 @@ export const menuData: Record<string, MenuItem[]> = {
     },
     {
       item: "Roast Chicken Biryani Half",
-      price: 150,
-      slug: "roast-biryani-half",
       image: "/roast-biryani.jpg",
+      variants: [
+        {
+          size: "Half",
+          price: 150,
+          slug: "roast-biryani-half",
+          item: "Roast Chicken Biryani Half",
+        },
+        {
+          size: "Full",
+          price: 250,
+          slug: "roast-biryani-full",
+          item: "Roast Chicken Biryani Full",
+        },
+      ],
     },
     {
       item: "Mini Dum Biryani (1pc)",

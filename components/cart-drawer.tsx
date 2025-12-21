@@ -99,10 +99,10 @@ export default function CartDrawer({ isOpen, onClose, cart, onAdd, onRemove, onC
             </div>
           ) : (
             <>
-              <ScrollArea className="flex-1 p-4">
+              <ScrollArea className="flex-1 p-4 overflow-hidden">
                 <div className="space-y-3">
                   {cart.map((item) => (
-                    <div key={item.slug} className="flex overflow-y-auto items-center gap-3 bg-secondary/50 rounded-lg p-3">
+                    <div key={item.slug} className="flex items-center gap-3 bg-white/80 rounded-lg p-3">
                       <div className="flex-1">
                         <h4 className="font-medium capitalize text-sm">{item.item}</h4>
                         <p className="text-primary font-semibold">
@@ -131,12 +131,9 @@ export default function CartDrawer({ isOpen, onClose, cart, onAdd, onRemove, onC
               {/* Footer */}
               <div className="border-t border-border p-4 space-y-3">
                 <div className="space-y-1 text-sm">
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Subtotal</span>
-                    <span>₹{subtotal}</span>
-                  </div>
+                
 
-                  <div className="flex justify-between text-lg font-bold pt-2 border-t border-border">
+                  <div className="flex justify-between text-lg font-bold pt-2">
                     <span>Total</span>
                     <span className="text-primary">₹{total}</span>
                   </div>
