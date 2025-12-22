@@ -438,13 +438,13 @@ export const menuData: Record<string, MenuItem[]> = {
       variants: [
         {
           size: "Half",
-          price: 330,
+          price: 180,
           slug: "pahadi-kabab-half",
           item: "Pahadi kabab Half",
         },
         {
           size: "Full",
-          price: 330,
+          price: 310,
           slug: "pahadi-kabab-full",
           item: "Pahadi kabab Full",
         },
@@ -452,7 +452,15 @@ export const menuData: Record<string, MenuItem[]> = {
     },
   ],
 
-  nihariItems: [{ item: "Paya", price: 180, slug: "paya", image: "/paya.png" }],
+  nihariItems: [
+    { item: "Paya", price: 180, slug: "paya", image: "/paya.png" },
+    {
+      item: "Nihari  ka Sherwa",
+      price: 80,
+      slug: "niharisherwa",
+      image: "/paya.png",
+    },
+  ],
 
   desserts: [
     {
@@ -487,23 +495,22 @@ export const menuData: Record<string, MenuItem[]> = {
     },
   ],
 
-  extras : [
-   
-     {
+  extras: [
+    {
       item: "Campa Cola (TIN)",
       image: "/campacola.png",
-     
+
       price: 25,
       slug: "campacola",
     },
 
-     {
+    {
       item: "Soft Drink Bottle ",
       price: 10,
       slug: "campacola-bottle",
       image: "/campacolabottle.png",
     },
-     {
+    {
       item: "Water Bottle",
       price: 10,
       slug: "water-bottle",
@@ -515,7 +522,7 @@ export const menuData: Record<string, MenuItem[]> = {
       slug: "soda",
       image: "/soda.png",
     },
-     {
+    {
       item: "Extra Rice ",
       image: "/extrarice.png",
       variants: [
@@ -533,9 +540,7 @@ export const menuData: Record<string, MenuItem[]> = {
         },
       ],
     },
-
-
-  ]
+  ],
 };
 
 export const categories = [
