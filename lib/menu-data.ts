@@ -524,7 +524,7 @@ export const menuData: Record<string, MenuItem[]> = {
     },
    {
       item: "Chanaga Pappu Mutton",
-      price: 15,
+      price: 350,
       slug: "pappu",
       image: "",
     },
