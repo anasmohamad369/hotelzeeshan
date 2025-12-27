@@ -110,6 +110,12 @@ export const menuData: Record<string, MenuItem[]> = {
       slug: "mini-dum-biryani",
       image: "/roast-biryani.jpg",
     },
+    {
+      item: "Chanaga Pappu Mutton",
+      price: 450,
+      slug: "pappu",
+      image: "/muttoncurry.png",
+    },
   ],
 
   rotiItems: [
@@ -522,12 +528,6 @@ export const menuData: Record<string, MenuItem[]> = {
       slug: "soda",
       image: "/soda.png",
     },
-   {
-      item: "Chanaga Pappu Mutton",
-      price: 350,
-      slug: "pappu",
-      image: "",
-    },
     {
       item: "Extra Rice ",
       image: "/extrarice.png",
@@ -545,6 +545,12 @@ export const menuData: Record<string, MenuItem[]> = {
           item: "Extra Rice Full",
         },
       ],
+    },
+    {
+      item: "Campa Pet Bottle",
+      price: 20,
+      slug: "campapetbottle",
+      image: "/campapet.png",
     },
   ],
 };
