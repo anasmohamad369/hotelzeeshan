@@ -24,7 +24,7 @@ export default function CartDrawer({ isOpen, onClose, cart, onAdd, onRemove, onC
 
   const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0)
   const discountAmount = (subtotal * Number(discount)) / 100
-  const total = subtotal - discountAmount
+  const total = subtotal ;
 
   const handlePlaceOrder = async () => {
     setIsPlacingOrder(true)
