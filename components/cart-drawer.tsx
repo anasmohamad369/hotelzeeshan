@@ -40,6 +40,7 @@ export default function CartDrawer({ isOpen, onClose, cart, onAdd, onRemove, onC
             qty: item.quantity,
             price: item.price,
           })),
+          discount: discount,
           total: total,
         }),
       })
