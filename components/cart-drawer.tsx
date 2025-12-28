@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { X, ShoppingBag, Trash2, Minus, Plus, Loader2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { useToast } from "@/hooks/use-toast"
 import type { CartItem, MenuItem } from "@/lib/menu-data"
@@ -18,11 +19,12 @@ interface CartDrawerProps {
 
 export default function CartDrawer({ isOpen, onClose, cart, onAdd, onRemove, onClear }: CartDrawerProps) {
   const [isPlacingOrder, setIsPlacingOrder] = useState(false)
+  const [discount, setDiscount] = useState<number | string>(0)
   const { toast } = useToast()
 
   const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0)
-
-  const total = subtotal
+  const discountAmount = (subtotal * Number(discount)) / 100
+  const total = subtotal - discountAmount
 
   const handlePlaceOrder = async () => {
     setIsPlacingOrder(true)
@@ -130,12 +132,40 @@ export default function CartDrawer({ isOpen, onClose, cart, onAdd, onRemove, onC
 
               {/* Footer */}
               <div className="border-t border-border p-4 space-y-3">
-                <div className="space-y-1 text-sm">
-                
+                <div className="space-y-3 mb-4">
+                  <div className="flex justify-between text-base">
+                    <span className="text-muted-foreground">Subtotal</span>
+                    <span>₹{subtotal.toFixed(2)}</span>
+                  </div>
 
-                  <div className="flex justify-between text-lg font-bold pt-2">
+                  <div className="flex justify-between items-center text-base">
+                    <div className="flex items-center gap-2">
+                      <span className="text-muted-foreground">Discount (%)</span>
+                      <Input
+                        type="text"
+                        // min="0"
+                        max="100"
+                        value={discount}
+                        onChange={(e) => {
+                          const val = e.target.value
+                          if (val === "") {
+                            setDiscount("")
+                            return
+                          }
+                          const parsed = parseFloat(val)
+                          setDiscount(isNaN(parsed) ? 0 : Math.min(100, Math.max(0, parsed)))
+                        }}
+                        className="h-8 w-16 text-right"
+                      />
+                    </div>
+                    <span className="text-red-500">-₹{discountAmount.toFixed(2)}</span>
+                  </div>
+
+                  <div className="h-px bg-border my-2" />
+
+                  <div className="flex justify-between text-lg font-bold">
                     <span>Total</span>
-                    <span className="text-primary">₹{total}</span>
+                    <span className="text-primary">₹{Math.round(total)}</span>
                   </div>
                 </div>
 
