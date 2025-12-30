@@ -1,6 +1,7 @@
 export type BaseItem = {
   item: string;
   image: string;
+  stock?: number;
 };
 
 export type SingleItem = BaseItem & {
@@ -15,6 +16,7 @@ export type VariantItem = BaseItem & {
     price: number;
     slug: string;
     item: string; // Name to display in cart
+    stock?: number;
   }[];
   price?: never;
   slug?: never;
@@ -285,6 +287,24 @@ export const menuData: Record<string, MenuItem[]> = {
       slug: "bheja-fry",
       image: "/bheja-fry.png",
     },
+    {
+      item: "Afghani  Chicken",
+      image: "/afghanichicken.png",
+      variants: [
+        {
+          size: "Half",
+          price: 190,
+          slug: "afghani-chicken-half",
+          item: "Afghani Chicken Half ",
+        },
+        {
+          size: "Full",
+          price: 290,
+          slug: "afghani-chicken-full",
+          item: "Afghani Chicken Full ",
+        },
+      ],
+    },
   ],
 
   tandooriSpecial: [
@@ -456,6 +476,12 @@ export const menuData: Record<string, MenuItem[]> = {
         },
       ],
     },
+    {
+      item: "Raan Nawabi",
+      price: 130,
+      slug: "raan-nawabi",
+      image: "/raannawabi.png",
+    },
   ],
 
   nihariItems: [
@@ -474,30 +500,35 @@ export const menuData: Record<string, MenuItem[]> = {
       price: 100,
       slug: "apricot-delight",
       image: "/apricot.png",
+      stock: 5,
     },
     {
       item: "shatoot malai",
       price: 120,
       slug: "shatoot-malai",
       image: "/shatoot.png",
+      stock: 0, // Out of stock example
     },
     {
       item: "kubani ka mitha",
       price: 40,
       slug: "kubani-ka-mitha",
       image: "/kubani.png",
+      stock: 10,
     },
     {
       item: "kaddu ka kheer",
       price: 80,
       slug: "kaddu-ka-kheer",
       image: "/khadu.png",
+      stock: 8,
     },
     {
       item: "sitaphal malai",
       price: 150,
       slug: "sitaphal-malai",
       image: "/sitaphal.png",
+      stock: 3,
     },
   ],
 

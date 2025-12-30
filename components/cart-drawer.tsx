@@ -19,12 +19,15 @@ interface CartDrawerProps {
 
 export default function CartDrawer({ isOpen, onClose, cart, onAdd, onRemove, onClear }: CartDrawerProps) {
   const [isPlacingOrder, setIsPlacingOrder] = useState(false)
-  const [discount, setDiscount] = useState<number | string>(0)
+  const [discount, setDiscount] = useState<number>(0)
   const { toast } = useToast()
 
   const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0)
-  const discountAmount = (subtotal * Number(discount)) / 100
-  const total = subtotal - discountAmount ;
+  const discountValue = discount || 0
+  const discountAmount = (subtotal * discountValue) / 100
+  const total = subtotal ;
+  const totalAmount = total - discountAmount
+
 
   const handlePlaceOrder = async () => {
     setIsPlacingOrder(true)
@@ -40,8 +43,9 @@ export default function CartDrawer({ isOpen, onClose, cart, onAdd, onRemove, onC
             qty: item.quantity,
             price: item.price,
           })),
-          discount: discount,
-          total: subtotal,
+          discount: discountValue,
+          total: Math.round(total),
+          totalAmount: Math.round(totalAmount),
         }),
       })
 
@@ -51,6 +55,7 @@ export default function CartDrawer({ isOpen, onClose, cart, onAdd, onRemove, onC
           description: "Your delicious food is on its way.",
           variant: "default",
         })
+        setDiscount(0)
         onClear()
         onClose()
       } else {
@@ -150,7 +155,7 @@ export default function CartDrawer({ isOpen, onClose, cart, onAdd, onRemove, onC
                         onChange={(e) => {
                           const val = e.target.value
                           if (val === "") {
-                            setDiscount("")
+                            setDiscount(0)
                             return
                           }
                           const parsed = parseFloat(val)
@@ -159,19 +164,28 @@ export default function CartDrawer({ isOpen, onClose, cart, onAdd, onRemove, onC
                         className="h-8 w-16 text-right"
                       />
                     </div>
-                    <span className="text-red-500">-₹{discountAmount.toFixed(2)}</span>
+                    <span className="text-red-500">
+                      {discountAmount > 0 ? `-₹${discountAmount.toFixed(2)}` : "₹0.00"}
+                    </span>
                   </div>
 
                   <div className="h-px bg-border my-2" />
 
                   <div className="flex justify-between text-lg font-bold">
                     <span>Total</span>
-                    <span className="text-primary">₹{Math.round(total)}</span>
+                    <span className="text-primary">₹{Math.round(totalAmount)}</span>
                   </div>
                 </div>
 
                 <div className="flex gap-2">
-                  <Button variant="outline" className="flex-1 bg-transparent" onClick={onClear}>
+                  <Button
+                    variant="outline"
+                    className="flex-1 bg-transparent"
+                    onClick={() => {
+                      setDiscount(0)
+                      onClear()
+                    }}
+                  >
                     <Trash2 className="h-4 w-4 mr-2" />
                     Clear
                   </Button>

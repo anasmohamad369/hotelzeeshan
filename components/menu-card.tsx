@@ -40,6 +40,10 @@ export default function MenuCard({ item, cart, onAdd, onRemove }: MenuCardProps)
     ? item.variants!.reduce((acc, v) => acc + (cart.find((c) => c.slug === v.slug)?.quantity || 0), 0)
     : quantity
 
+  const stock = isVariant ? currentVariant!.stock : item.stock
+  const isOutOfStock = stock !== undefined && stock <= 0
+  const canAdd = stock === undefined || quantity < stock
+
   const handleAdd = () => {
     onAdd({
       item: displayName,
@@ -75,8 +79,8 @@ export default function MenuCard({ item, cart, onAdd, onRemove }: MenuCardProps)
               <button
                 key={v.slug}
                 className={`flex-1 text-xs font-medium py-1 rounded-md transition-colors ${selectedVariantSlug === v.slug
-                    ? "bg-white text-primary shadow-sm"
-                    : "text-muted-foreground hover:bg-white/50"
+                  ? "bg-white text-primary shadow-sm"
+                  : "text-muted-foreground hover:bg-white/50"
                   }`}
                 onClick={() => setSelectedVariantSlug(v.slug)}
               >
@@ -87,13 +91,29 @@ export default function MenuCard({ item, cart, onAdd, onRemove }: MenuCardProps)
         )}
 
         <div className="flex items-center justify-between mt-2">
-          <span className="text-xl font-bold text-secondary">₹{displayPrice}</span>
+          <div>
+            <span className="text-xl font-bold text-secondary">₹{displayPrice}</span>
+            {stock !== undefined && stock <= 5 && stock > 0 && (
+              <p className="text-xs text-red-500 font-medium">Only {stock} left!</p>
+            )}
+          </div>
 
           {quantity === 0 ? (
-            <Button size="sm" onClick={handleAdd} className="bg-secondary hover:bg-primary/90">
-              <Plus className="h-4 w-4 mr-1" />
-              Add
-            </Button>
+            isOutOfStock ? (
+              <Button size="sm" disabled className="bg-muted text-muted-foreground">
+                Out of Stock
+              </Button>
+            ) : (
+              <Button
+                size="sm"
+                onClick={handleAdd}
+                className="bg-secondary hover:bg-primary/90"
+                disabled={!canAdd}
+              >
+                <Plus className="h-4 w-4 mr-1" />
+                Add
+              </Button>
+            )
           ) : (
             <div className="flex items-center gap-2">
               <Button
@@ -105,7 +125,12 @@ export default function MenuCard({ item, cart, onAdd, onRemove }: MenuCardProps)
                 <Minus className="h-4 w-4" />
               </Button>
               <span className="w-8 text-center font-semibold">{quantity}</span>
-              <Button size="icon" className="h-8 w-8 bg-primary" onClick={handleAdd}>
+              <Button
+                size="icon"
+                className="h-8 w-8 bg-primary"
+                onClick={handleAdd}
+                disabled={!canAdd}
+              >
                 <Plus className="h-4 w-4" />
               </Button>
             </div>
