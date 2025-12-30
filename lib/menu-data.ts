@@ -507,7 +507,7 @@ export const menuData: Record<string, MenuItem[]> = {
       price: 120,
       slug: "shatoot-malai",
       image: "/shatoot.png",
-      stock: 0, // Out of stock example
+// Out of stock example
     },
     {
       item: "kubani ka mitha",
@@ -528,7 +528,7 @@ export const menuData: Record<string, MenuItem[]> = {
       price: 150,
       slug: "sitaphal-malai",
       image: "/sitaphal.png",
-      stock: 3,
+
     },
   ],
 

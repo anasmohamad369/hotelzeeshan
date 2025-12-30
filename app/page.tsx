@@ -6,12 +6,14 @@ import CategoryTabs from "@/components/category-tabs"
 import MenuSection from "@/components/menu-section"
 import CartDrawer from "@/components/cart-drawer"
 import { menuData, type MenuItem, type CartItem } from "@/lib/menu-data"
+import { useMenuStock } from "@/lib/use-menu-stock"
 
 export default function Home() {
   const [cart, setCart] = useState<CartItem[]>([])
   const [cartOpen, setCartOpen] = useState(false)
   const [activeCategory, setActiveCategory] = useState("biryaniSpecial")
   const sectionRefs = useRef<{ [key: string]: HTMLDivElement | null }>({})
+  const dessertsWithStock = useMenuStock()
 
   const addToCart = (item: Omit<CartItem, "quantity">) => {
     setCart((prev) => {
@@ -51,7 +53,7 @@ export default function Home() {
     { id: "gravyItems", title: "Gravy Items", images: "/kadai-chicken-curry.jpg", items: menuData.gravyItems },
     { id: "tandooriSpecial", title: "Tandoori Special", images: "/tandoori.png", items: menuData.tandooriSpecial },
     { id: "nihariItems", title: "Nihari & More", images: "/paya.png", items: menuData.nihariItems },
-    { id: "desserts", title: "Desserts", images: "/apricot.png", items: menuData.desserts },
+    { id: "desserts", title: "Desserts", images: "/apricot.png", items: dessertsWithStock },
     { id: "extras", title: "Extras", images: "/apricot.png", items: menuData.extras },
   ]
 

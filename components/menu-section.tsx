@@ -12,7 +12,7 @@ interface MenuSectionProps {
   onRemove: (slug: string) => void
 }
 
-export default function MenuSection({ title, images, items, cart, onAdd, onRemove }: MenuSectionProps) {
+export default function  MenuSection({ title, images, items, cart, onAdd, onRemove }: MenuSectionProps) {
   return (
     <section className="mb-10">
       <div className="flex items-center gap-3 mb-6">

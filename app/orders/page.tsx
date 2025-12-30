@@ -19,7 +19,7 @@ import {
 } from "@/components/ui/alert-dialog"
 import { useToast } from "@/hooks/use-toast"
 import { menuData, categories, type MenuItem } from "@/lib/menu-data"
-import { X } from "lucide-react"
+import { Printer, X } from "lucide-react"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Clock, CheckCircle, Truck, Loader2, Search, Trash2, Edit, Plus, Minus, ShoppingBag } from "lucide-react"
@@ -781,12 +781,12 @@ export default function OrdersPage() {
                       {isUpdating ? (
                         <>
                           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                          Updating...
+                          <p>Printing...</p>
                         </>
                       ) : (
                         <>
-                          <Edit className="mr-2 h-4 w-4" />
-                          Update Order
+                          <Printer className="mr-2 h-4 w-4" />
+                          Print Token
                         </>
                       )}
                     </Button>

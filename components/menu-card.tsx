@@ -93,8 +93,8 @@ export default function MenuCard({ item, cart, onAdd, onRemove }: MenuCardProps)
         <div className="flex items-center justify-between mt-2">
           <div>
             <span className="text-xl font-bold text-secondary">₹{displayPrice}</span>
-            {stock !== undefined && stock <= 5 && stock > 0 && (
-              <p className="text-xs text-red-500 font-medium">Only {stock} left!</p>
+            { (
+              <p className="text-xs text-black font-medium">Only {stock} left!</p>
             )}
           </div>
 

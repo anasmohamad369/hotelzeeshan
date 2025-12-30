@@ -1,6 +1,6 @@
 "use client"
 
-import { ShoppingCart, Menu, X, BarChart3 } from "lucide-react"
+import { ShoppingCart, Menu, X, BarChart3, Package } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
@@ -39,6 +39,10 @@ export default function Nav({ cartCount = 0, onCartClick }: NavProps) {
             <Link href="/stats" className="font-medium hover:text-accent transition-colors flex items-center gap-1">
               <BarChart3 className="h-4 w-4" />
               Stats
+            </Link>
+            <Link href="/stock" className="font-medium hover:text-accent transition-colors flex items-center gap-1">
+              <Package className="h-4 w-4" />
+              Stock
             </Link>
             <Button variant="secondary" size="sm" className="relative" onClick={onCartClick}>
               <ShoppingCart className="h-5 w-5" />

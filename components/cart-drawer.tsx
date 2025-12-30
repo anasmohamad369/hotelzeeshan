@@ -32,6 +32,7 @@ export default function CartDrawer({ isOpen, onClose, cart, onAdd, onRemove, onC
   const handlePlaceOrder = async () => {
     setIsPlacingOrder(true)
     try {
+      // Place order
       const response = await fetch("http://localhost:3001/place-order", {
         method: "POST",
         headers: {
@@ -42,6 +43,7 @@ export default function CartDrawer({ isOpen, onClose, cart, onAdd, onRemove, onC
             name: item.item,
             qty: item.quantity,
             price: item.price,
+            
           })),
           discount: discountValue,
           total: Math.round(total),
@@ -50,6 +52,36 @@ export default function CartDrawer({ isOpen, onClose, cart, onAdd, onRemove, onC
       })
 
       if (response.ok) {
+        // Decrement stock for dessert items
+        const dessertSlugs = [
+          'apricot-delight',
+          'shatoot-malai',
+          'kubani-ka-mitha',
+          'kaddu-ka-kheer',
+          'sitaphal-malai',
+        ]
+        
+        // Filter only dessert items from cart
+        const dessertItems = cart.filter((item) => 
+          dessertSlugs.includes(item.slug)
+        )
+
+        if (dessertItems.length > 0) {
+          // Decrement stock
+          await fetch("/api/stock/decrement", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              items: dessertItems.map((item) => ({
+                slug: item.slug,
+                quantity: item.quantity,
+              })),
+            }),
+          })
+        }
+
         toast({
           title: "Order Placed Successfully!",
           description: "Your delicious food is on its way.",
