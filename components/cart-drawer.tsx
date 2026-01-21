@@ -33,11 +33,11 @@ export default function CartDrawer({ isOpen, onClose, cart, onAdd, onRemove, onC
     setIsPlacingOrder(true)
     try {
       // Place order
-      const response = await fetch("http://localhost:3001/place-order", {
+      const response = await fetch("http://localhost:3002/place-order", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-        },
+        }
         body: JSON.stringify({
           items: cart.map((item) => ({
             name: item.item,
