@@ -37,7 +37,7 @@ export default function CartDrawer({ isOpen, onClose, cart, onAdd, onRemove, onC
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-        }
+        },
         body: JSON.stringify({
           items: cart.map((item) => ({
             name: item.item,
