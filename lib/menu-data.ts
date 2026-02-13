@@ -12,7 +12,7 @@ export type SingleItem = BaseItem & {
 
 export type VariantItem = BaseItem & {
   variants: {
-    size: "Half" | "Full";
+    size: "Half" | "Full" | "Special" | "Normal" | "Basamati";
     price: number;
     slug: string;
     item: string; // Name to display in cart
@@ -33,6 +33,113 @@ export type CartItem = {
 };
 
 export const menuData: Record<string, MenuItem[]> = {
+
+  specials :[
+    {
+      item: "Shawarama",
+      image: "/shawarma.png",
+      variants: [
+        {
+          size: "Special",
+          price: 130,
+          slug: "mutton-biryani-half",
+          item: "Mutton Kachi Dum Biryani Half",
+        },
+        {
+          size: "Normal",
+          price: 100,
+          slug: "mutton-biryani-full",
+          item: "Mutton Kachi Dum Biryani Full",
+        },
+      ],
+    },
+
+    {
+      item: "Koju Pita (1PC_",
+      image: "/koju.png",
+      price: 80,
+      slug: "kojupita",
+    },
+    {
+      item: "Chicken Haleem",
+      image: "/haleem.png",
+      variants: [
+        {
+          size: "Special",
+          price: 130,
+          slug: "mutton-biryani-half",
+          item: "Mutton Kachi Dum Biryani Half",
+        },
+        {
+          size: "Normal",
+          price: 100,
+          slug: "mutton-biryani-full",
+          item: "Mutton Kachi Dum Biryani Full",
+        },
+      ],
+    },
+    {
+      item: "Mutton Haleem",
+      image: "/haleem.png",
+      variants: [
+        {
+          size: "Special",
+          price: 130,
+          slug: "mutton-biryani-half",
+          item: "Mutton Kachi Dum Biryani Half",
+        },
+        {
+          size: "Normal",
+          price: 100,
+          slug: "mutton-biryani-full",
+          item: "Mutton Kachi Dum Biryani Full",
+        },
+      ],
+    },
+
+
+  ],
+
+  chinnese :[
+    {
+      item: "Chicken Fried Rice ",
+      image: "/fried.png",
+      variants: [
+        {
+          size: "Basamati",
+          price: 120,
+          slug: "basmati-fried-rice-half",
+          item: "Mutton Kachi Dum Biryani Half",
+        },
+        {
+          size: "Normal",
+          price: 80,
+          slug: "sona-fried-rice-full",
+          item: "Mutton Kachi Dum Biryani Full",
+        },
+      ],
+    },
+    {
+      item: "Chicken Noodles ",
+      image: "/noodles.png",
+      variants: [
+        {
+          size: "Half",
+          price: 100,
+          slug: "mutton-biryani-half",
+          item: "Mutton Kachi Dum Biryani Half",
+        },
+        {
+          size: "Full",
+          price: 160,
+          slug: "mutton-biryani-full",
+          item: "Mutton Kachi Dum Biryani Full",
+        },
+      ],
+    },
+
+
+  ],
   biryaniSpecial: [
     {
       item: "Mutton Kachi Dum Biryani",
@@ -584,6 +691,8 @@ export const menuData: Record<string, MenuItem[]> = {
       image: "/campapet.png",
     },
   ],
+
+  
 };
 
 export const categories = [
@@ -592,10 +701,21 @@ export const categories = [
     label: "Biryani Special",
     icon: "/half-portion-mutton-biryani.jpg",
   },
+  {
+    id: "specials",
+    label: "Special",
+    icon: "/shawarma.png",
+  },
+  {
+    id: "chinnese",
+    label: "chinnese Items",
+    icon: "/fried.png",
+  },
   { id: "rotiItems", label: "Roti & Naan", icon: "/plain-naan-bread.jpg" },
   { id: "gravyItems", label: "Gravy Items", icon: "/kadai-chicken-curry.jpg" },
   { id: "tandooriSpecial", label: "Tandoori Special", icon: "/tandoori.png" },
   { id: "nihariItems", label: "Nihari & More", icon: "/paya.png" },
   { id: "desserts", label: "Desserts", icon: "/apricot.png" },
   { id: "extras", label: "Extras", icon: "/apricot.png" },
+
 ] as const;
