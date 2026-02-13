@@ -48,6 +48,18 @@ export default function Home() {
   const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0)
 
   const menuSections = [
+    {
+      id: "specials",
+      title: "Zeeshan Specials",
+      images : "/shawarma.png",
+      items: menuData.specials ,
+    },
+    {
+      id: "chinnese",
+      title: "Chinnese  Items",
+      images : "/fried.png",
+      items: menuData.chinnese ,
+    },
     { id: "biryaniSpecial", title: "Biryani Special", images: "/half-portion-mutton-biryani.jpg", items: menuData.biryaniSpecial },
     { id: "rotiItems", title: "Roti & Naan", images: "/plain-naan-bread.jpg", items: menuData.rotiItems },
     { id: "gravyItems", title: "Gravy Items", images: "/kadai-chicken-curry.jpg", items: menuData.gravyItems },
@@ -55,6 +67,7 @@ export default function Home() {
     { id: "nihariItems", title: "Nihari & More", images: "/paya.png", items: menuData.nihariItems },
     { id: "desserts", title: "Desserts", images: "/apricot.png", items: dessertsWithStock },
     { id: "extras", title: "Extras", images: "/apricot.png", items: menuData.extras },
+
   ]
 
   return (
