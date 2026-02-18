@@ -12,7 +12,7 @@ export type SingleItem = BaseItem & {
 
 export type VariantItem = BaseItem & {
   variants: {
-    size: "Half" | "Full" | "Special" | "Normal" | "Basamati";
+    size: "Half" | "Full" | "Special" | "Normal" | "Basamati" | "Family";
     price: number;
     slug: string;
     item: string; // Name to display in cart
@@ -42,14 +42,14 @@ export const menuData: Record<string, MenuItem[]> = {
         {
           size: "Special",
           price: 130,
-          slug: "mutton-biryani-half",
-          item: "Mutton Kachi Dum Biryani Half",
+          slug: "chicken-shawarma",
+          item: "Chicken Shawarama Special",
         },
         {
           size: "Normal",
           price: 100,
           slug: "mutton-biryani-full",
-          item: "Mutton Kachi Dum Biryani Full",
+          item: "Chicken Shawarama Normal",
         },
       ],
     },
@@ -65,15 +65,21 @@ export const menuData: Record<string, MenuItem[]> = {
       image: "/haleem.png",
       variants: [
         {
-          size: "Special",
-          price: 130,
-          slug: "mutton-biryani-half",
+          size: "Normal",
+          price: 150,
+          slug: "chicken-haleem-nrml",
           item: "Mutton Kachi Dum Biryani Half",
         },
         {
-          size: "Normal",
-          price: 100,
-          slug: "mutton-biryani-full",
+          size: "Special",
+          price: 150,
+          slug: "chicken-haleem-spl",
+          item: "Mutton Kachi Dum Biryani Full",
+        },
+        {
+          size: "Family",
+          price: 350,
+          slug: "chicken-haleem-fam",
           item: "Mutton Kachi Dum Biryani Full",
         },
       ],
@@ -83,20 +89,26 @@ export const menuData: Record<string, MenuItem[]> = {
       image: "/haleem.png",
       variants: [
         {
-          size: "Special",
-          price: 130,
-          slug: "mutton-biryani-half",
+          size: "Normal",
+          price: 180,
+          slug: "mutton-haleem-nrml",
           item: "Mutton Kachi Dum Biryani Half",
         },
         {
-          size: "Normal",
-          price: 100,
-          slug: "mutton-biryani-full",
+          size: "Special",
+          price: 230,
+          slug: "mutton-haleem-spl",
+          item: "Mutton Kachi Dum Biryani Full",
+        },
+        {
+          size: "Family",
+          price: 650,
+          slug: "mutton-haleem-fam",
           item: "Mutton Kachi Dum Biryani Full",
         },
       ],
     },
-
+ 
 
   ],
 
