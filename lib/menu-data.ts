@@ -48,7 +48,7 @@ export const menuData: Record<string, MenuItem[]> = {
         {
           size: "Normal",
           price: 100,
-          slug: "mutton-biryani-full",
+          slug: "chicken-shawarma-spl",
           item: "Chicken Shawarama Normal",
         },
       ],
@@ -66,7 +66,7 @@ export const menuData: Record<string, MenuItem[]> = {
       variants: [
         {
           size: "Normal",
-          price: 150,
+          price: 100,
           slug: "chicken-haleem-nrml",
           item: "Chicken Haleem Normal",
         },
