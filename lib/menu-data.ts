@@ -39,18 +39,20 @@ export const menuData: Record<string, MenuItem[]> = {
       item: "Shawarama",
       image: "/shawarma.png",
       variants: [
-        {
-          size: "Special",
-          price: 130,
-          slug: "chicken-shawarma",
-          item: "Chicken Shawarama Special",
-        },
+     
         {
           size: "Normal",
           price: 100,
           slug: "chicken-shawarma-spl",
           item: "Chicken Shawarama Normal",
         },
+
+           {
+          size: "Special",
+          price: 120,
+          slug: "chicken-shawarma",
+          item: "Chicken Shawarama Special",
+        }
       ],
     },
 
