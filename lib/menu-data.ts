@@ -12,7 +12,7 @@ export type SingleItem = BaseItem & {
 
 export type VariantItem = BaseItem & {
   variants: {
-    size: "Half" | "Full" | "Special" | "Normal" | "Basamati";
+    size: "Half" | "Full" | "Special" | "Normal" | "Basamati" | "Family";
     price: number;
     slug: string;
     item: string; // Name to display in cart
@@ -39,18 +39,20 @@ export const menuData: Record<string, MenuItem[]> = {
       item: "Shawarama",
       image: "/shawarma.png",
       variants: [
-        {
-          size: "Special",
-          price: 130,
-          slug: "mutton-biryani-half",
-          item: "Mutton Kachi Dum Biryani Half",
-        },
+     
         {
           size: "Normal",
           price: 100,
-          slug: "mutton-biryani-full",
-          item: "Mutton Kachi Dum Biryani Full",
+          slug: "chicken-shawarma-spl",
+          item: "Chicken Shawarama Normal",
         },
+
+           {
+          size: "Special",
+          price: 120,
+          slug: "chicken-shawarma",
+          item: "Chicken Shawarama Special",
+        }
       ],
     },
 
@@ -65,16 +67,22 @@ export const menuData: Record<string, MenuItem[]> = {
       image: "/haleem.png",
       variants: [
         {
-          size: "Special",
-          price: 130,
-          slug: "mutton-biryani-half",
-          item: "Mutton Kachi Dum Biryani Half",
-        },
-        {
           size: "Normal",
           price: 100,
-          slug: "mutton-biryani-full",
-          item: "Mutton Kachi Dum Biryani Full",
+          slug: "chicken-haleem-nrml",
+          item: "Chicken Haleem Normal",
+        },
+        {
+          size: "Special",
+          price: 150,
+          slug: "chicken-haleem-spl",
+          item: "Chicken Haleem Spl",
+        },
+        {
+          size: "Family",
+          price: 350,
+          slug: "chicken-haleem-fam",
+          item: "Chicken Haleem Jumbo",
         },
       ],
     },
@@ -83,39 +91,63 @@ export const menuData: Record<string, MenuItem[]> = {
       image: "/haleem.png",
       variants: [
         {
-          size: "Special",
-          price: 130,
-          slug: "mutton-biryani-half",
-          item: "Mutton Kachi Dum Biryani Half",
+          size: "Normal",
+          price: 180,
+          slug: "mutton-haleem-nrml",
+          item: "Mutton Haleem Nrml",
         },
         {
-          size: "Normal",
-          price: 100,
-          slug: "mutton-biryani-full",
-          item: "Mutton Kachi Dum Biryani Full",
+          size: "Special",
+          price: 230,
+          slug: "mutton-haleem-spl",
+          item: "Mutton Haleem Spl",
+        },
+        {
+          size: "Family",
+          price: 650,
+          slug: "mutton-haleem-fam",
+          item: "Mutton Haleem Jum",
         },
       ],
     },
-
+ 
 
   ],
 
   chinnese :[
     {
-      item: "Chicken Fried Rice ",
+      item: "Chicken Fried Rice Sona ",
       image: "/fried.png",
       variants: [
         {
-          size: "Basamati",
-          price: 120,
+          size: "half",
+          price: 80,
           slug: "basmati-fried-rice-half",
-          item: "Mutton Kachi Dum Biryani Half",
+          item: "Half Chicken Sona",
         },
         {
-          size: "Normal",
-          price: 80,
+          size: "full",
+          price: 150,
           slug: "sona-fried-rice-full",
-          item: "Mutton Kachi Dum Biryani Full",
+          item: "Full Chciken Sona",
+        },
+      ],
+    },
+       {
+      item: "Chicken Fried Rice Basamati",
+      image: "/fried.png",
+      variants: [
+        {
+          size: "half",
+          price: 100,
+          slug: "basmati-fried-rice-half",
+          item: "Basamati Fried Rice",
+        },
+        {
+          size: "full",
+          price: 180,
+          slug: "sona-fried-rice-full",
+          item: "Normal Fried Rice",
         },
       ],
     },
@@ -127,13 +159,31 @@ export const menuData: Record<string, MenuItem[]> = {
           size: "Half",
           price: 100,
           slug: "mutton-biryani-half",
-          item: "Mutton Kachi Dum Biryani Half",
+          item: "Chicken Noodles Half",
         },
         {
           size: "Full",
-          price: 160,
+          price: 180,
           slug: "mutton-biryani-full",
-          item: "Mutton Kachi Dum Biryani Full",
+          item: "Chicken Noodles Full",
+        },
+      ],
+    },
+        {
+      item: "Roast Fried Rice",
+      image: "/noodles.png",
+      variants: [
+        {
+          size: "Half",
+          price: 150,
+          slug: "mutton-biryani-half",
+          item: "Chicken Roast Half",
+        },
+        {
+          size: "Full",
+          price: 250,
+          slug: "mutton-biryani-full",
+          item: "Chicken Roast Full",
         },
       ],
     },
@@ -604,14 +654,14 @@ export const menuData: Record<string, MenuItem[]> = {
   desserts: [
     {
       item: "Apricot delight",
-      price: 100,
+      price: 120,
       slug: "apricot-delight",
       image: "/apricot.png",
       stock: 5,
     },
     {
       item: "shatoot malai",
-      price: 120,
+      price: 150,
       slug: "shatoot-malai",
       image: "/shatoot.png",
 // Out of stock example
