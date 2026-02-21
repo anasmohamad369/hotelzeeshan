@@ -654,7 +654,7 @@ export const menuData: Record<string, MenuItem[]> = {
   desserts: [
     {
       item: "Apricot delight",
-      price: 100,
+      price: 120,
       slug: "apricot-delight",
       image: "/apricot.png",
       stock: 5,
