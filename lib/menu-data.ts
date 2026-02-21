@@ -88,7 +88,7 @@ export const menuData: Record<string, MenuItem[]> = {
     },
     {
       item: "Mutton Haleem",
-      image: "/haleem.png",
+      image: "/mutton.webp",
       variants: [
         {
           size: "Normal",
@@ -117,16 +117,16 @@ export const menuData: Record<string, MenuItem[]> = {
   chinnese :[
     {
       item: "Chicken Fried Rice Sona ",
-      image: "/fried.png",
+      image: "/street.jpg",
       variants: [
         {
-          size: "half",
+          size: "Half",
           price: 80,
           slug: "basmati-fried-rice-half",
           item: "Half Chicken Sona",
         },
         {
-          size: "full",
+          size: "Full",
           price: 150,
           slug: "sona-fried-rice-full",
           item: "Full Chciken Sona",
@@ -138,13 +138,13 @@ export const menuData: Record<string, MenuItem[]> = {
       image: "/fried.png",
       variants: [
         {
-          size: "half",
+          size: "Half",
           price: 100,
           slug: "basmati-fried-rice-half",
           item: "Basamati Fried Rice",
         },
         {
-          size: "full",
+          size: "Full",
           price: 180,
           slug: "sona-fried-rice-full",
           item: "Normal Fried Rice",
@@ -171,7 +171,7 @@ export const menuData: Record<string, MenuItem[]> = {
     },
         {
       item: "Roast Fried Rice",
-      image: "/noodles.png",
+      image: "/roast.jpg",
       variants: [
         {
           size: "Half",
