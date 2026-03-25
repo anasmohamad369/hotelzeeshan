@@ -197,13 +197,13 @@ export const menuData: Record<string, MenuItem[]> = {
       variants: [
         {
           size: "Half",
-          price: 350,
+          price: 380,
           slug: "mutton-biryani-half",
           item: "Mutton Kachi Dum Biryani Half",
         },
         {
           size: "Full",
-          price: 450,
+          price: 480,
           slug: "mutton-biryani-full",
           item: "Mutton Kachi Dum Biryani Full",
         },
@@ -215,13 +215,13 @@ export const menuData: Record<string, MenuItem[]> = {
       variants: [
         {
           size: "Half",
-          price: 150,
+          price: 170,
           slug: "chicken-kachi-biryani-half",
           item: "Chicken Kachi Dum Biryani Half",
         },
         {
           size: "Full",
-          price: 250,
+          price: 280,
           slug: "chicken-kachi-biryani-full",
           item: "Chicken Kachi Dum Biryani Full",
         },
