@@ -139,13 +139,13 @@ export const menuData: Record<string, MenuItem[]> = {
       variants: [
         {
           size: "Half",
-          price: 100,
+          price: 150,
           slug: "basmati-fried-rice-half",
           item: "Basamati Fried Rice",
         },
         {
           size: "Full",
-          price: 180,
+          price: 220,
           slug: "sona-fried-rice-full",
           item: "Normal Fried Rice",
         },
@@ -169,6 +169,42 @@ export const menuData: Record<string, MenuItem[]> = {
         },
       ],
     },
+    {
+      item: "Egg Noodles ",
+      image: "/noodles.png",
+      variants: [
+        {
+          size: "Half",
+          price: 90,
+          slug: "egg-noodles-half",
+          item: "Chicken Noodles Half",
+        },
+        {
+          size: "Full",
+          price: 170,
+          slug: "egg-noodles-full",
+          item: "Chicken Noodles Full",
+        },
+      ],
+    },
+     {
+      item: "Veg  Noodles ",
+      image: "/noodles.png",
+      variants: [
+        {
+          size: "Half",
+          price: 80,
+          slug: "veg-noodles-half",
+          item: "Chicken Noodles Half",
+        },
+        {
+          size: "Full",
+          price: 150,
+          slug: "veg-noodles-full",
+          item: "Chicken Noodles Full",
+        },
+      ],
+    },
         {
       item: "Roast Fried Rice",
       image: "/roast.jpg",
@@ -181,12 +217,49 @@ export const menuData: Record<string, MenuItem[]> = {
         },
         {
           size: "Full",
-          price: 250,
+          price: 220,
           slug: "mutton-biryani-full",
           item: "Chicken Roast Full",
         },
       ],
     },
+            {
+      item: "Veg Fried Rice",
+      image: "/roast.jpg",
+      variants: [
+        {
+          size: "Half",
+          price: 80,
+          slug: "Veg-fried-rice",
+          item: "Veg Fried Rice Half",
+        },
+        {
+          size: "Full",
+          price: 130,
+          slug: "Veg-fried-rice",
+          item: "Veg Fried Rice Full",
+        },
+      ],
+    },
+      {
+      item: "Egg Fried Rice",
+      image: "/roast.jpg",
+      variants: [
+        {
+          size: "Half",
+          price: 100,
+          slug: "egg-fried-rice",
+          item: "Egg Fried Rice Half",
+        },
+        {
+          size: "Full",
+          price: 150,
+          slug: "egg-fried-rice",
+          item: "Egg Fried Rice  Full",
+        },
+      ],
+    },
+    
 
 
   ],
