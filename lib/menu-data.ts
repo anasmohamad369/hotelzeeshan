@@ -121,13 +121,13 @@ export const menuData: Record<string, MenuItem[]> = {
       variants: [
         {
           size: "Half",
-          price: 120,
+          price: 80,
           slug: "sona-fried-rice-half",
           item: "Half Chicken Sona",
         },
         {
           size: "Full",
-          price: 180,
+          price: 150,
           slug: "sona-fried-rice-full",
           item: "Full Chciken Sona",
         },
@@ -151,13 +151,13 @@ export const menuData: Record<string, MenuItem[]> = {
       variants: [
         {
           size: "Half",
-          price: 150,
+          price: 120,
           slug: "basmati-fried-rice-half",
           item: "Basamati Fried Rice",
         },
         {
           size: "Full",
-          price: 220,
+          price: 180,
           slug: "sona-fried-rice-full",
           item: "Normal Fried Rice",
         },
@@ -235,7 +235,7 @@ export const menuData: Record<string, MenuItem[]> = {
         },
       ],
     },
-            {
+        {
       item: "Veg Fried Rice",
       image: "/roast.jpg",
       variants: [
@@ -265,7 +265,7 @@ export const menuData: Record<string, MenuItem[]> = {
         },
         {
           size: "Full",
-          price: 160,
+          price: 150,
           slug: "egg-fried-rice-full",
           item: "Egg Fried Rice  Full",
         },
@@ -290,6 +290,24 @@ export const menuData: Record<string, MenuItem[]> = {
           size: "Full",
           price: 450,
           slug: "mutton-biryani-full",
+          item: "Mutton Kachi Dum Biryani Full",
+        },
+      ],
+    },
+     {
+      item: "Mutton FRY  Biryani",
+      image: "/mutton-biryani-rice-dish.jpg",
+      variants: [
+        {
+          size: "Half",
+          price: 300,
+          slug: "mutton-FRY-biryani-half",
+          item: "Mutton Kachi Dum Biryani Half",
+        },
+        {
+          size: "Full",
+          price: 470,
+          slug: "mutton-fry-biryani-full",
           item: "Mutton Kachi Dum Biryani Full",
         },
       ],
