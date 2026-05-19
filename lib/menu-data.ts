@@ -121,15 +121,27 @@ export const menuData: Record<string, MenuItem[]> = {
       variants: [
         {
           size: "Half",
-          price: 80,
-          slug: "basmati-fried-rice-half",
+          price: 120,
+          slug: "sona-fried-rice-half",
           item: "Half Chicken Sona",
         },
         {
           size: "Full",
-          price: 150,
+          price: 180,
           slug: "sona-fried-rice-full",
           item: "Full Chciken Sona",
+        },
+      ],
+    },
+    {
+      item: "Chicken Special Fried Rice ",
+      image: "/street.jpg",
+      variants: [
+        {
+          size: "Full",
+          price: 350,
+          slug: "special-fried-rice-full",
+          item: "Full Chicken Special",
         },
       ],
     },
@@ -177,13 +189,13 @@ export const menuData: Record<string, MenuItem[]> = {
           size: "Half",
           price: 90,
           slug: "egg-noodles-half",
-          item: "Chicken Noodles Half",
+          item: "Egg Noodles Half",
         },
         {
           size: "Full",
           price: 170,
           slug: "egg-noodles-full",
-          item: "Chicken Noodles Full",
+          item: "Egg Noodles Full",
         },
       ],
     },
@@ -195,13 +207,13 @@ export const menuData: Record<string, MenuItem[]> = {
           size: "Half",
           price: 80,
           slug: "veg-noodles-half",
-          item: "Chicken Noodles Half",
+          item: "Veg Noodles Half",
         },
         {
           size: "Full",
           price: 150,
           slug: "veg-noodles-full",
-          item: "Chicken Noodles Full",
+          item: "Veg Noodles Full",
         },
       ],
     },
@@ -230,13 +242,13 @@ export const menuData: Record<string, MenuItem[]> = {
         {
           size: "Half",
           price: 80,
-          slug: "Veg-fried-rice",
+          slug: "Veg-fried-rice-half",
           item: "Veg Fried Rice Half",
         },
         {
           size: "Full",
           price: 130,
-          slug: "Veg-fried-rice",
+          slug: "Veg-fried-rice-full",
           item: "Veg Fried Rice Full",
         },
       ],
@@ -253,7 +265,7 @@ export const menuData: Record<string, MenuItem[]> = {
         },
         {
           size: "Full",
-          price: 150,
+          price: 160,
           slug: "egg-fried-rice",
           item: "Egg Fried Rice  Full",
         },
@@ -270,13 +282,13 @@ export const menuData: Record<string, MenuItem[]> = {
       variants: [
         {
           size: "Half",
-          price: 380,
+          price: 280,
           slug: "mutton-biryani-half",
           item: "Mutton Kachi Dum Biryani Half",
         },
         {
           size: "Full",
-          price: 480,
+          price: 450,
           slug: "mutton-biryani-full",
           item: "Mutton Kachi Dum Biryani Full",
         },
@@ -324,13 +336,13 @@ export const menuData: Record<string, MenuItem[]> = {
       variants: [
         {
           size: "Half",
-          price: 150,
+          price: 170,
           slug: "roast-biryani-half",
           item: "Roast Chicken Biryani Half",
         },
         {
           size: "Full",
-          price: 250,
+          price: 280,
           slug: "roast-biryani-full",
           item: "Roast Chicken Biryani Full",
         },
@@ -338,7 +350,7 @@ export const menuData: Record<string, MenuItem[]> = {
     },
     {
       item: "Mini Dum Biryani (1pc)",
-      price: 100,
+      price: 120,
       slug: "mini-dum-biryani",
       image: "/roast-biryani.jpg",
     },
