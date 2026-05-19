@@ -62,7 +62,7 @@ export const menuData: Record<string, MenuItem[]> = {
       price: 80,
       slug: "kojupita",
     },
-    {
+    {EGG-FR
       item: "Chicken Haleem",
       image: "/haleem.png",
       variants: [
@@ -260,13 +260,13 @@ export const menuData: Record<string, MenuItem[]> = {
         {
           size: "Half",
           price: 100,
-          slug: "egg-fried-rice",
+          slug: "egg-fried-rice-half",
           item: "Egg Fried Rice Half",
         },
         {
           size: "Full",
           price: 160,
-          slug: "egg-fried-rice",
+          slug: "egg-fried-rice-full",
           item: "Egg Fried Rice  Full",
         },
       ],
